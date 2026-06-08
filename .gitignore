@@ -1,0 +1,6 @@
+.DS_Store
+*.py
+__pycache__/
+.claude/
+hero-video.mov
+hero-video.mp4

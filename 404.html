@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Tour Tropical</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #FFF8ED;
+            color: #1C1917;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+        .error-page { max-width: 520px; }
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #F97316, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        p {
+            color: #78716C;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            background: #F97316;
+            color: white;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background: #EA580C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+        }
+        .wave {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <span class="wave">🌊</span>
+        <div class="error-code">404</div>
+        <h1>Playa No Encontrada</h1>
+        <p>Parece que esta playa no existe en nuestro mapa. Pero no te preocupes, tenemos muchas playas increibles esperando por ti.</p>
+        <a href="index.html" class="btn">Volver al Inicio</a>
+    </div>
+</body>
+</html>
