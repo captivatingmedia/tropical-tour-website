@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javi | Asesor de Viajes - Tour Tropical</title>
+    <meta name="description" content="Reserva tu tour con Javi, asesor oficial de Tour Tropical en Santa Marta. Playas, naturaleza y aventura en el Caribe colombiano.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Javi | Asesor de Tour Tropical - Santa Marta">
+    <meta property="og:description" content="Reserva tu aventura en Santa Marta con Javi, asesor oficial de Tour Tropical.">
+    <meta property="og:image" content="images/tayrona-banner.jpg">
+    <meta property="og:url" content="https://tourtropical.com/javi">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ── Affiliate Hero ── */
+        .affiliate-hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, #0c3547 0%, #0a5c6e 50%, #0EA5E9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .affiliate-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/tayrona-banner.jpg') center/cover no-repeat;
+            opacity: 0.18;
+        }
+        .affiliate-hero-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 640px;
+        }
+        .affiliate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 100px;
+            padding: 8px 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #FFF8ED;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            backdrop-filter: blur(8px);
+        }
+        .affiliate-badge span.dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #22C55E;
+            display: inline-block;
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+        }
+        .affiliate-avatar-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 28px;
+        }
+        .affiliate-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            overflow: hidden;
+        }
+        .affiliate-avatar-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 28px;
+        }
+        .affiliate-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+        .affiliate-title {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+        .affiliate-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 36px;
+        }
+        .affiliate-cta-group {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-whatsapp-affiliate {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+        }
+        .btn-whatsapp-affiliate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+        }
+        .btn-explore-affiliate {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.25);
+            backdrop-filter: blur(8px);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-explore-affiliate:hover {
+            background: rgba(255,255,255,0.22);
+            transform: translateY(-2px);
+        }
+
+        /* ── Trust Strip ── */
+        .affiliate-trust {
+            background: var(--white);
+            border-bottom: 1px solid var(--sand-dark);
+            padding: 20px 0;
+        }
+        .affiliate-trust-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-medium);
+        }
+        .trust-icon {
+            font-size: 1.1rem;
+        }
+
+        /* ── Tours heading override for affiliate page ── */
+        .affiliate-tours-heading {
+            text-align: center;
+            padding: 64px 24px 0;
+        }
+        .affiliate-tours-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .affiliate-tours-heading p {
+            color: var(--text-light);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ── Scroll indicator ── */
+        .affiliate-scroll {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .affiliate-scroll-arrow {
+            width: 20px;
+            height: 20px;
+            border-right: 2px solid rgba(255,255,255,0.4);
+            border-bottom: 2px solid rgba(255,255,255,0.4);
+            transform: rotate(45deg);
+            animation: bounce-arrow 1.6s infinite;
+        }
+        @keyframes bounce-arrow {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(5px); }
+        }
+
+        /* ── Booking section affiliate note ── */
+        .affiliate-booking-note {
+            background: var(--sand);
+            border-radius: var(--radius-sm);
+            padding: 14px 18px;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .affiliate-booking-note strong {
+            color: var(--text-dark);
+        }
+
+        /* ── Back to main site ── */
+        .back-to-site {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            position: absolute;
+            top: 90px;
+            left: 24px;
+            transition: color 0.2s;
+            z-index: 2;
+        }
+        .back-to-site:hover { color: rgba(255,255,255,0.9); }
+    </style>
+</head>
+<body>
+
+<!-- Skip to Content -->
+<a href="#tours" class="skip-to-content">Saltar al contenido</a>
+
+<!-- Language Toggle -->
+<button class="lang-toggle" id="langToggle" aria-label="Switch language">
+    <span class="lang-flag">🇺🇸</span> EN
+</button>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-logo">
+            <span class="logo-tour">Tour</span> <span class="logo-tropical">Tropical</span>
+        </a>
+        <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#tours" data-es="Tours" data-en="Tours" data-pt="Passeios">Tours</a></li>
+            <li><a href="#booking" data-es="Reservar" data-en="Book Now" data-pt="Reserve Agora">Reservar</a></li>
+            <li><a href="#contact" data-es="Contacto" data-en="Contact" data-pt="Contato">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Affiliate Hero -->
+<section class="affiliate-hero" id="hero">
+    <a href="/" class="back-to-site">
+        ← <span data-es="Ver todos los tours" data-en="View all tours" data-pt="Ver todos os passeios">Ver todos los tours</span>
+    </a>
+
+    <div class="affiliate-hero-inner">
+        <div class="affiliate-badge">
+            <span class="dot"></span>
+            <span data-es="Asesor Oficial · Tour Tropical" data-en="Official Partner · Tour Tropical" data-pt="Parceiro Oficial · Tour Tropical">Asesor Oficial · Tour Tropical</span>
+        </div>
+
+        <div class="affiliate-avatar-placeholder">J</div>
+
+        <h1 class="affiliate-name">Javi</h1>
+        <p class="affiliate-title" data-es="Tu asesor de viajes en Santa Marta" data-en="Your travel specialist in Santa Marta" data-pt="Seu especialista em viagens em Santa Marta">Tu asesor de viajes en Santa Marta</p>
+        <p class="affiliate-location">
+            📍 <span data-es="Santa Marta, Colombia" data-en="Santa Marta, Colombia" data-pt="Santa Marta, Colômbia">Santa Marta, Colombia</span>
+        </p>
+
+        <div class="affiliate-cta-group">
+            <a href="https://wa.me/573013493902" target="_blank" class="btn-whatsapp-affiliate">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span data-es="Escríbeme por WhatsApp" data-en="Message me on WhatsApp" data-pt="Me escreva no WhatsApp">Escríbeme por WhatsApp</span>
+            </a>
+            <a href="#tours" class="btn-explore-affiliate">
+                <span data-es="Ver Tours" data-en="See Tours" data-pt="Ver Passeios">Ver Tours</span> ↓
+            </a>
+        </div>
+    </div>
+
+    <div class="affiliate-scroll">
+        <div class="affiliate-scroll-arrow"></div>
+    </div>
+</section>
+
+<!-- Trust Strip -->
+<div class="affiliate-trust">
+    <div class="container">
+        <div class="affiliate-trust-inner">
+            <div class="trust-item">
+                <span class="trust-icon">✅</span>
+                <span data-es="Asesor verificado" data-en="Verified advisor" data-pt="Assessor verificado">Asesor verificado</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">🌊</span>
+                <span data-es="15+ destinos disponibles" data-en="15+ destinations available" data-pt="15+ destinos disponíveis">15+ destinos disponibles</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">⭐</span>
+                <span data-es="1000+ viajeros felices" data-en="1000+ happy travelers" data-pt="1000+ viajantes felizes">1000+ viajeros felices</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">💬</span>
+                <span data-es="Respuesta rápida por WhatsApp" data-en="Quick WhatsApp response" data-pt="Resposta rápida pelo WhatsApp">Respuesta rápida por WhatsApp</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tours Heading -->
+<div class="affiliate-tours-heading" id="tours">
+    <h2 data-es="Tours Disponibles" data-en="Available Tours" data-pt="Passeios Disponíveis">Tours Disponibles</h2>
+    <p data-es="Reserva directamente con Javi y vive la mejor experiencia en el Caribe colombiano" data-en="Book directly with Javi and live the best experience on the Colombian Caribbean" data-pt="Reserve diretamente com Javi e viva a melhor experiência no Caribe colombiano">Reserva directamente con Javi y vive la mejor experiencia en el Caribe colombiano</p>
+</div>
+
+<!-- Tours Section - Tayrona -->
+<section class="tours-section">
+    <div class="section-header parallax-section">
+        <div class="section-header-bg tayrona-bg" data-speed="0.3"></div>
+        <div class="section-header-overlay"></div>
+        <div class="section-header-content">
+            <h2 class="section-title fade-up" data-es="Parque Tayrona" data-en="Tayrona Park" data-pt="Parque Tayrona">Parque Tayrona</h2>
+            <p class="section-subtitle fade-up delay-1" data-es="Playas paradisíacas en el corazón de la naturaleza" data-en="Paradise beaches in the heart of nature" data-pt="Praias paradisíacas no coração da natureza">Playas paradisíacas en el corazón de la naturaleza</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="tours-grid">
+            <div class="tour-card-link tour-card fade-up" data-href="tours/playa-cristal.html">
+                <div class="tour-card-image">
+                    <picture>
+                        <source srcset="images/playa-cristal.avif" type="image/avif">
+                        <img src="images/playa-cristal.jpg" alt="Playa Cristal" class="tour-img" loading="lazy">
+                    </picture>
+                    <span class="tour-badge" data-es="Recomendado" data-en="Recommended" data-pt="Recomendado">Recomendado</span>
+                    <span class="tour-type" data-es="Marítimo o Terrestre" data-en="Maritime or Land" data-pt="Marítimo ou Terrestre">Marítimo o Terrestre</span>
+                </div>
+                <div class="tour-card-body">
+                    <h3 class="tour-name">Playa Cristal</h3>
+                    <p class="tour-desc" data-es="El rincón cristalino del parque Tayrona. Descubre la arena blanca, el agua transparente, sumérgete en sus corales y su encanto marino." data-en="The crystalline corner of Tayrona Park. Discover white sand, transparent water, dive into its corals and marine charm." data-pt="O recanto cristalino do Parque Tayrona.">El rincón cristalino del parque Tayrona. Descubre la arena blanca, el agua transparente, sumérgete en sus corales y su encanto marino.</p>
+                    <ul class="tour-includes">
+                        <li data-es="Ingreso Parque Tayrona" data-en="Tayrona Park Entry" data-pt="Entrada no Parque Tayrona">Ingreso Parque Tayrona</li>
+                        <li data-es="Seguro Médico" data-en="Medical Insurance" data-pt="Seguro Médico">Seguro Médico</li>
+                        <li data-es="Transporte Ida y Regreso" data-en="Round-trip Transport" data-pt="Transporte Ida e Volta">Transporte Ida y Regreso</li>
+                    </ul>
+                    <div class="tour-footer">
+                        <div class="tour-price">$155.000 <span>COP/pp</span></div>
+                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card-link tour-card fade-up delay-1" data-href="tours/cabo-san-juan.html">
+                <div class="tour-card-image">
+                    <picture>
+                        <source srcset="images/cabo-san-juan.avif" type="image/avif">
+                        <img src="images/cabo-san-juan.jpg" alt="Cabo San Juan" class="tour-img" loading="lazy">
+                    </picture>
+                    <span class="tour-type" data-es="Marítimo o Terrestre" data-en="Maritime or Land" data-pt="Marítimo ou Terrestre">Marítimo o Terrestre</span>
+                </div>
+                <div class="tour-card-body">
+                    <h3 class="tour-name">Cabo San Juan</h3>
+                    <p class="tour-desc" data-es="La playa más popular del Parque Tayrona. Agua cristalina, naturaleza y senderos rodeados de selva tropical." data-en="The most popular beach in Tayrona Park. Crystal water, nature and trails surrounded by tropical jungle." data-pt="A praia mais popular do Parque Tayrona.">La playa más popular del Parque Tayrona. Agua cristalina, naturaleza y senderos rodeados de selva tropical.</p>
+                    <ul class="tour-includes">
+                        <li data-es="Ingreso Parque Tayrona" data-en="Tayrona Park Entry" data-pt="Entrada no Parque Tayrona">Ingreso Parque Tayrona</li>
+                        <li data-es="Seguro Médico" data-en="Medical Insurance" data-pt="Seguro Médico">Seguro Médico</li>
+                        <li data-es="Transporte Ida y Regreso" data-en="Round-trip Transport" data-pt="Transporte Ida e Volta">Transporte Ida y Regreso</li>
+                    </ul>
+                    <div class="tour-footer">
+                        <div class="tour-price">$155.000 - $210.000 <span>COP/pp</span></div>
+                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card-link tour-card fade-up delay-2" data-href="tours/palomino.html">
+                <div class="tour-card-image">
+                    <picture>
+                        <source srcset="images/palomino.avif" type="image/avif">
+                        <img src="images/palomino.jpg" alt="Palomino" class="tour-img" loading="lazy">
+                    </picture>
+                    <span class="tour-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+                </div>
+                <div class="tour-card-body">
+                    <h3 class="tour-name">Palomino, Guajira</h3>
+                    <p class="tour-desc" data-es="Un paraíso con playas de arena dorada, tubing por el río y la energía vibrante del Caribe colombiano." data-en="A paradise with golden sand beaches, river tubing and the vibrant energy of the Colombian Caribbean." data-pt="Um paraíso com praias de areia dourada.">Un paraíso con playas de arena dorada, tubing por el río y la energía vibrante del Caribe colombiano.</p>
+                    <ul class="tour-includes">
+                        <li data-es="Desayuno y Almuerzo" data-en="Breakfast & Lunch" data-pt="Café da Manhã e Almoço">Desayuno y Almuerzo</li>
+                        <li data-es="Seguro Médico" data-en="Medical Insurance" data-pt="Seguro Médico">Seguro Médico</li>
+                        <li data-es="Transporte Ida y Regreso" data-en="Round-trip Transport" data-pt="Transporte Ida e Volta">Transporte Ida y Regreso</li>
+                    </ul>
+                    <div class="tour-footer">
+                        <div class="tour-price">$120.000 <span>COP/pp</span></div>
+                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Parallax Divider -->
+<div class="parallax-divider parallax-divider-1">
+    <div class="parallax-divider-overlay"></div>
+    <div class="parallax-divider-content fade-up">
+        <h2 data-es="Aventuras Más Allá del Tayrona" data-en="Adventures Beyond Tayrona" data-pt="Aventuras Além do Tayrona">Aventuras Más Allá del Tayrona</h2>
+        <p data-es="Explora destinos increíbles en la costa caribeña colombiana" data-en="Explore incredible destinations on the Colombian Caribbean coast" data-pt="Explore destinos incríveis na costa caribenha colombiana">Explora destinos increíbles en la costa caribeña colombiana</p>
+    </div>
+</div>
+
+<!-- Regional Tours -->
+<section class="tours-section tours-regional">
+    <div class="container">
+        <h2 class="section-title-inline fade-up" data-es="Destinos Regionales" data-en="Regional Destinations" data-pt="Destinos Regionais">Destinos Regionales</h2>
+        <div class="tours-grid">
+            <div class="tour-card-link tour-card fade-up" data-href="tours/cartagena-baru.html">
+                <div class="tour-card-image">
+                    <picture>
+                        <source srcset="images/cartagena-baru.avif" type="image/avif">
+                        <img src="images/cartagena-baru.jpg" alt="Cartagena - Barú" class="tour-img" loading="lazy">
+                    </picture>
+                    <span class="tour-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+                </div>
+                <div class="tour-card-body">
+                    <h3 class="tour-name">Cartagena - Barú</h3>
+                    <p class="tour-desc" data-es="Historia, cultura y playas en un solo tour." data-en="History, culture and beaches in one tour." data-pt="História, cultura e praias em um só passeio.">Historia, cultura y playas en un solo tour.</p>
+                    <ul class="tour-includes">
+                        <li data-es="Desayuno y Almuerzo" data-en="Breakfast & Lunch" data-pt="Café da Manhã e Almoço">Desayuno y Almuerzo</li>
+                        <li data-es="Guía Profesional" data-en="Professional Guide" data-pt="Guia Profissional">Guía Profesional</li>
+                    </ul>
+                    <div class="tour-footer">
+                        <div class="tour-price">$170.000 <span>COP/pp</span></div>
+                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card-link tour-card fade-up delay-1" data-href="tours/minca-taganga.html">
+                <div class="tour-card-image">
+                    <picture>
+                        <source srcset="images/minca-taganga.avif" type="image/avif">
+                        <img src="images/minca-taganga.jpg" alt="Minca - Taganga" class="tour-img" loading="lazy">
+                    </picture>
+                    <span class="tour-type" data-es="Terrestre y Marítimo" data-en="Land & Maritime" data-pt="Terrestre e Marítimo">Terrestre y Marítimo</span>
+                </div>
+                <div class="tour-card-body">
+                    <h3 class="tour-name">Minca - Taganga</h3>
+                    <p class="tour-desc" data-es="Sierra Nevada y playas en un día completo." data-en="Sierra Nevada and beaches in a full day." data-pt="Sierra Nevada e praias em um dia completo.">Sierra Nevada y playas en un día completo.</p>
+                    <ul class="tour-includes">
+                        <li data-es="Desayuno y Almuerzo" data-en="Breakfast & Lunch" data-pt="Café da Manhã e Almoço">Desayuno y Almuerzo</li>
+                        <li data-es="Guía Profesional" data-en="Professional Guide" data-pt="Guia Profissional">Guía Profesional</li>
+                    </ul>
+                    <div class="tour-footer">
+                        <div class="tour-price">$130.000 <span>COP/pp</span></div>
+                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card-link tour-card fade-up delay-2" data-href="tours/katamaran.html">
+                <div class="tour-card-image">
+                    <picture>
+                        <source srcset="images/katamaran.avif" type="image/avif">
+                        <img src="images/katamaran.jpg" alt="Fiesta Blanca Katamarán" class="tour-img" loading="lazy">
+                    </picture>
+                    <span class="tour-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+                </div>
+                <div class="tour-card-body">
+                    <h3 class="tour-name">Fiesta Blanca Katamarán</h3>
+                    <p class="tour-desc" data-es="Barra libre, show folclórico y DJ a bordo en la bahía de Santa Marta." data-en="Open bar, folklore show and DJ on board in Santa Marta Bay." data-pt="Open bar, show folclórico e DJ a bordo.">Barra libre, show folclórico y DJ a bordo en la bahía de Santa Marta.</p>
+                    <ul class="tour-includes">
+                        <li data-es="Barra Libre de Cócteles" data-en="Open Bar Cocktails" data-pt="Coquetéis Open Bar">Barra Libre de Cócteles</li>
+                        <li data-es="Show Folclórico y DJ" data-en="Folklore Show & DJ" data-pt="Show Folclórico e DJ">Show Folclórico y DJ</li>
+                    </ul>
+                    <div class="tour-footer">
+                        <div class="tour-price">$150.000 <span>COP/pp</span></div>
+                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Section -->
+<section class="booking-section" id="booking">
+    <div class="container">
+        <div class="booking-wrapper">
+            <div class="booking-info fade-up">
+                <h2 data-es="Reserva con Javi" data-en="Book with Javi" data-pt="Reserve com Javi">Reserva con Javi</h2>
+                <p data-es="Completa el formulario o contáctame directamente por WhatsApp. Te respondo rápido y te ayudo a elegir el tour perfecto para ti." data-en="Fill out the form or contact me directly on WhatsApp. I'll respond quickly and help you choose the perfect tour." data-pt="Preencha o formulário ou me contate pelo WhatsApp. Respondo rápido e ajudo você a escolher o passeio perfeito.">Completa el formulario o contáctame directamente por WhatsApp. Te respondo rápido y te ayudo a elegir el tour perfecto para ti.</p>
+                <a href="https://wa.me/573013493902" target="_blank" class="btn btn-whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    <span>WhatsApp: +57 301 349 3902</span>
+                </a>
+                <div class="affiliate-booking-note">
+                    <span>🔒</span>
+                    <span data-es="Reservas gestionadas por <strong>Tour Tropical</strong> · Agencia Operadora Oficial" data-en="Bookings managed by <strong>Tour Tropical</strong> · Official Operating Agency" data-pt="Reservas gerenciadas pela <strong>Tour Tropical</strong> · Agência Operadora Oficial">Reservas gestionadas por <strong>Tour Tropical</strong> · Agencia Operadora Oficial</span>
+                </div>
+            </div>
+            <form class="booking-form fade-up delay-1" id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" data-es="Nombre completo" data-en="Full name" data-pt="Nome completo">Nombre completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-es="Correo electrónico" data-en="Email" data-pt="E-mail">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone" data-es="Teléfono / WhatsApp" data-en="Phone / WhatsApp" data-pt="Telefone / WhatsApp">Teléfono / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests" data-es="Número de personas" data-en="Number of guests" data-pt="Número de hóspedes">Número de personas</label>
+                        <input type="number" id="guests" name="guests" min="1" value="1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tour" data-es="Tour deseado" data-en="Desired tour" data-pt="Passeio desejado">Tour deseado</label>
+                        <select id="tour" name="tour" required>
+                            <option value="" data-es="Selecciona un tour" data-en="Select a tour" data-pt="Selecione um passeio">Selecciona un tour</option>
+                            <option value="playa-cristal">Playa Cristal - $155.000</option>
+                            <option value="bahia-cinto">Bahía Cinto - $170.000</option>
+                            <option value="cinto-cristal">Cinto + Cristal - $190.000</option>
+                            <option value="cabo-san-juan">Cabo San Juan - $155.000-$210.000</option>
+                            <option value="bahia-concha">Bahía Concha - $110.000</option>
+                            <option value="acuario-playa-blanca">Acuario Playa Blanca - $32.000-$148.000</option>
+                            <option value="minca-taganga">Minca-Taganga - $130.000</option>
+                            <option value="buritaca">Buritaca - $120.000</option>
+                            <option value="palomino">Palomino, Guajira - $120.000</option>
+                            <option value="cartagena-baru">Cartagena-Barú - $170.000</option>
+                            <option value="barranquilla">Barranquilla-Puerto Mocho - $150.000</option>
+                            <option value="aquatreck">Aquatreck - $130.000</option>
+                            <option value="katamaran">Fiesta Blanca Katamarán - $150.000</option>
+                            <option value="sunset">Paseo al Atardecer - $80.000</option>
+                            <option value="chiva-tradicional">Chiva Rumbera Tradicional - $25.000</option>
+                            <option value="chiva-vip">Chiva Rumbera VIP - $30.000</option>
+                            <option value="city-tour">City Tour en Chiva - $35.000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" data-es="Fecha deseada" data-en="Desired date" data-pt="Data desejada">Fecha deseada</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message" data-es="Mensaje adicional" data-en="Additional message" data-pt="Mensagem adicional">Mensaje adicional</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </div>
+                <!-- Hidden field to track affiliate -->
+                <input type="hidden" name="affiliate" value="javi">
+                <button type="submit" class="btn btn-primary btn-full" data-es="Enviar Reserva a Javi" data-en="Send Booking to Javi" data-pt="Enviar Reserva para Javi">Enviar Reserva a Javi</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3><span class="logo-tour">Tour</span> <span class="logo-tropical">Tropical</span></h3>
+                <p data-es="Agencia Operadora de Viajes y Turismo en Santa Marta, Colombia." data-en="Travel & Tourism Agency in Santa Marta, Colombia." data-pt="Agência de Viagens e Turismo em Santa Marta, Colômbia.">Agencia Operadora de Viajes y Turismo en Santa Marta, Colombia.</p>
+            </div>
+            <div class="footer-contact">
+                <h4 data-es="Contactar a Javi" data-en="Contact Javi" data-pt="Contatar Javi">Contactar a Javi</h4>
+                <a href="https://wa.me/573013493902" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    +57 301 349 3902
+                </a>
+                <p>Santa Marta, Colombia</p>
+            </div>
+            <div class="footer-links">
+                <h4 data-es="Enlaces" data-en="Links" data-pt="Links">Enlaces</h4>
+                <a href="#tours" data-es="Tours" data-en="Tours" data-pt="Passeios">Tours</a>
+                <a href="#booking" data-es="Reservar" data-en="Book Now" data-pt="Reserve Agora">Reservar</a>
+                <a href="/" data-es="Página Principal" data-en="Main Site" data-pt="Página Principal">Página Principal</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tour Tropical. <span data-es="Todos los derechos reservados." data-en="All rights reserved." data-pt="Todos os direitos reservados.">Todos los derechos reservados.</span></p>
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/573013493902" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
