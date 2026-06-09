@@ -218,6 +218,136 @@
             margin: 0 auto;
         }
 
+        /* ── Horizontal Scroll Tours ── */
+        .scroll-tours-section {
+            padding: 48px 0 64px;
+        }
+        .scroll-tours-section .category-label {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 3vw, 1.6rem);
+            color: var(--text-dark);
+            padding: 0 24px;
+            margin-bottom: 20px;
+        }
+        .scroll-tours-row {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 24px 16px;
+            scrollbar-width: none;
+        }
+        .scroll-tours-row::-webkit-scrollbar { display: none; }
+        .scroll-tour-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: var(--white);
+            border-radius: var(--radius-md, 16px);
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        .scroll-tour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .scroll-tour-card .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .scroll-tour-card .card-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .scroll-tour-card .card-name {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+        .scroll-tour-card .card-desc {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.45;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .scroll-tour-card .card-footer {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .scroll-tour-card .card-price {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--sunset-orange, #F97316);
+        }
+        .scroll-tour-card .card-price span {
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+        .scroll-tour-card .card-btn {
+            background: var(--sunset-orange, #F97316);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .scroll-tour-card .card-btn:hover {
+            background: #EA580C;
+        }
+        .scroll-tour-card .card-type {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.55);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+            backdrop-filter: blur(4px);
+        }
+        .scroll-tour-card .card-img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+        .scroll-tour-card .card-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--sunset-orange, #F97316);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 100px;
+        }
+        .category-divider {
+            padding: 40px 24px 0;
+        }
+        @media (max-width: 640px) {
+            .scroll-tour-card { flex: 0 0 260px; }
+        }
+
         /* ── Scroll indicator ── */
         .affiliate-scroll {
             position: absolute;
@@ -372,169 +502,279 @@
     <p data-es="Reserva directamente con Javi y vive la mejor experiencia en el Caribe colombiano" data-en="Book directly with Javi and live the best experience on the Colombian Caribbean" data-pt="Reserve diretamente com Javi e viva a melhor experiência no Caribe colombiano">Reserva directamente con Javi y vive la mejor experiencia en el Caribe colombiano</p>
 </div>
 
-<!-- Tours Section - Tayrona -->
-<section class="tours-section">
-    <div class="section-header parallax-section">
-        <div class="section-header-bg tayrona-bg" data-speed="0.3"></div>
-        <div class="section-header-overlay"></div>
-        <div class="section-header-content">
-            <h2 class="section-title fade-up" data-es="Parque Tayrona" data-en="Tayrona Park" data-pt="Parque Tayrona">Parque Tayrona</h2>
-            <p class="section-subtitle fade-up delay-1" data-es="Playas paradisíacas en el corazón de la naturaleza" data-en="Paradise beaches in the heart of nature" data-pt="Praias paradisíacas no coração da natureza">Playas paradisíacas en el corazón de la naturaleza</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="tours-grid">
-            <div class="tour-card-link tour-card fade-up" data-href="tours/playa-cristal.html">
-                <div class="tour-card-image">
-                    <picture>
-                        <source srcset="images/playa-cristal.avif" type="image/avif">
-                        <img src="images/playa-cristal.jpg" alt="Playa Cristal" class="tour-img" loading="lazy">
-                    </picture>
-                    <span class="tour-badge" data-es="Recomendado" data-en="Recommended" data-pt="Recomendado">Recomendado</span>
-                    <span class="tour-type" data-es="Marítimo o Terrestre" data-en="Maritime or Land" data-pt="Marítimo ou Terrestre">Marítimo o Terrestre</span>
-                </div>
-                <div class="tour-card-body">
-                    <h3 class="tour-name">Playa Cristal</h3>
-                    <p class="tour-desc" data-es="El rincón cristalino del parque Tayrona. Descubre la arena blanca, el agua transparente, sumérgete en sus corales y su encanto marino." data-en="The crystalline corner of Tayrona Park. Discover white sand, transparent water, dive into its corals and marine charm." data-pt="O recanto cristalino do Parque Tayrona.">El rincón cristalino del parque Tayrona. Descubre la arena blanca, el agua transparente, sumérgete en sus corales y su encanto marino.</p>
-                    <ul class="tour-includes">
-                        <li data-es="Ingreso Parque Tayrona" data-en="Tayrona Park Entry" data-pt="Entrada no Parque Tayrona">Ingreso Parque Tayrona</li>
-                        <li data-es="Seguro Médico" data-en="Medical Insurance" data-pt="Seguro Médico">Seguro Médico</li>
-                        <li data-es="Transporte Ida y Regreso" data-en="Round-trip Transport" data-pt="Transporte Ida e Volta">Transporte Ida y Regreso</li>
-                    </ul>
-                    <div class="tour-footer">
-                        <div class="tour-price">$155.000 <span>COP/pp</span></div>
-                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
-                    </div>
-                </div>
+<!-- Parque Tayrona -->
+<div class="scroll-tours-section">
+    <h3 class="category-label" data-es="Parque Tayrona" data-en="Tayrona Park" data-pt="Parque Tayrona">Parque Tayrona</h3>
+    <div class="scroll-tours-row">
+        <!-- Playa Cristal -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/playa-cristal.avif" type="image/avif"><img src="images/playa-cristal.jpg" alt="Playa Cristal" class="card-img" loading="lazy"></picture>
+                <span class="card-badge" data-es="Recomendado" data-en="Recommended" data-pt="Recomendado">Recomendado</span>
+                <span class="card-type" data-es="Marítimo o Terrestre" data-en="Maritime or Land" data-pt="Marítimo ou Terrestre">Marítimo o Terrestre</span>
             </div>
-            <div class="tour-card-link tour-card fade-up delay-1" data-href="tours/cabo-san-juan.html">
-                <div class="tour-card-image">
-                    <picture>
-                        <source srcset="images/cabo-san-juan.avif" type="image/avif">
-                        <img src="images/cabo-san-juan.jpg" alt="Cabo San Juan" class="tour-img" loading="lazy">
-                    </picture>
-                    <span class="tour-type" data-es="Marítimo o Terrestre" data-en="Maritime or Land" data-pt="Marítimo ou Terrestre">Marítimo o Terrestre</span>
-                </div>
-                <div class="tour-card-body">
-                    <h3 class="tour-name">Cabo San Juan</h3>
-                    <p class="tour-desc" data-es="La playa más popular del Parque Tayrona. Agua cristalina, naturaleza y senderos rodeados de selva tropical." data-en="The most popular beach in Tayrona Park. Crystal water, nature and trails surrounded by tropical jungle." data-pt="A praia mais popular do Parque Tayrona.">La playa más popular del Parque Tayrona. Agua cristalina, naturaleza y senderos rodeados de selva tropical.</p>
-                    <ul class="tour-includes">
-                        <li data-es="Ingreso Parque Tayrona" data-en="Tayrona Park Entry" data-pt="Entrada no Parque Tayrona">Ingreso Parque Tayrona</li>
-                        <li data-es="Seguro Médico" data-en="Medical Insurance" data-pt="Seguro Médico">Seguro Médico</li>
-                        <li data-es="Transporte Ida y Regreso" data-en="Round-trip Transport" data-pt="Transporte Ida e Volta">Transporte Ida y Regreso</li>
-                    </ul>
-                    <div class="tour-footer">
-                        <div class="tour-price">$155.000 - $210.000 <span>COP/pp</span></div>
-                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="tour-card-link tour-card fade-up delay-2" data-href="tours/palomino.html">
-                <div class="tour-card-image">
-                    <picture>
-                        <source srcset="images/palomino.avif" type="image/avif">
-                        <img src="images/palomino.jpg" alt="Palomino" class="tour-img" loading="lazy">
-                    </picture>
-                    <span class="tour-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
-                </div>
-                <div class="tour-card-body">
-                    <h3 class="tour-name">Palomino, Guajira</h3>
-                    <p class="tour-desc" data-es="Un paraíso con playas de arena dorada, tubing por el río y la energía vibrante del Caribe colombiano." data-en="A paradise with golden sand beaches, river tubing and the vibrant energy of the Colombian Caribbean." data-pt="Um paraíso com praias de areia dourada.">Un paraíso con playas de arena dorada, tubing por el río y la energía vibrante del Caribe colombiano.</p>
-                    <ul class="tour-includes">
-                        <li data-es="Desayuno y Almuerzo" data-en="Breakfast & Lunch" data-pt="Café da Manhã e Almoço">Desayuno y Almuerzo</li>
-                        <li data-es="Seguro Médico" data-en="Medical Insurance" data-pt="Seguro Médico">Seguro Médico</li>
-                        <li data-es="Transporte Ida y Regreso" data-en="Round-trip Transport" data-pt="Transporte Ida e Volta">Transporte Ida y Regreso</li>
-                    </ul>
-                    <div class="tour-footer">
-                        <div class="tour-price">$120.000 <span>COP/pp</span></div>
-                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
-                    </div>
+            <div class="card-body">
+                <div class="card-name">Playa Cristal</div>
+                <p class="card-desc" data-es="El rincón cristalino del parque Tayrona. Arena blanca, agua transparente y encanto marino." data-en="The crystalline corner of Tayrona Park. White sand, transparent water and marine charm." data-pt="O recanto cristalino do Parque Tayrona.">El rincón cristalino del parque Tayrona. Arena blanca, agua transparente y encanto marino.</p>
+                <div class="card-footer">
+                    <div class="card-price">$155.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Parallax Divider -->
-<div class="parallax-divider parallax-divider-1">
-    <div class="parallax-divider-overlay"></div>
-    <div class="parallax-divider-content fade-up">
-        <h2 data-es="Aventuras Más Allá del Tayrona" data-en="Adventures Beyond Tayrona" data-pt="Aventuras Além do Tayrona">Aventuras Más Allá del Tayrona</h2>
-        <p data-es="Explora destinos increíbles en la costa caribeña colombiana" data-en="Explore incredible destinations on the Colombian Caribbean coast" data-pt="Explore destinos incríveis na costa caribenha colombiana">Explora destinos increíbles en la costa caribeña colombiana</p>
+        <!-- Bahía Cinto -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/bahia-cinto.avif" type="image/avif"><img src="images/bahia-cinto.jpg" alt="Bahía Cinto" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Bahía Cinto</div>
+                <p class="card-desc" data-es="Una de las playas más vírgenes del Parque Tayrona. Tranquilidad, vegetación y playa hermosa." data-en="One of the most virgin beaches of Tayrona Park. Tranquility, vegetation and beautiful beach." data-pt="Uma das praias mais preservadas do Parque Tayrona.">Una de las playas más vírgenes del Parque Tayrona. Tranquilidad, vegetación y playa hermosa.</p>
+                <div class="card-footer">
+                    <div class="card-price">$170.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Cinto + Cristal -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/cinto-cristal.avif" type="image/avif"><img src="images/cinto-cristal.jpg" alt="Cinto + Cristal" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Cinto + Cristal</div>
+                <p class="card-desc" data-es="Descubre 2 de las playas más exóticas del Parque Tayrona en un solo día." data-en="Discover 2 of the most exotic beaches of Tayrona Park in one day." data-pt="Descubra 2 das praias mais exóticas do Parque Tayrona.">Descubre 2 de las playas más exóticas del Parque Tayrona en un solo día.</p>
+                <div class="card-footer">
+                    <div class="card-price">$190.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Cabo San Juan -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/cabo-san-juan.avif" type="image/avif"><img src="images/cabo-san-juan.jpg" alt="Cabo San Juan" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo o Terrestre" data-en="Maritime or Land" data-pt="Marítimo ou Terrestre">Marítimo o Terrestre</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Cabo San Juan</div>
+                <p class="card-desc" data-es="La playa más popular del Parque Tayrona. Agua cristalina, miradores y senderos de selva." data-en="The most popular beach in Tayrona Park. Crystal water, viewpoints and jungle trails." data-pt="A praia mais popular do Parque Tayrona.">La playa más popular del Parque Tayrona. Agua cristalina, miradores y senderos de selva.</p>
+                <div class="card-footer">
+                    <div class="card-price">$155.000 - $210.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bahía Concha -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/bahia-concha.avif" type="image/avif"><img src="images/bahia-concha.jpg" alt="Bahía Concha" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Bahía Concha</div>
+                <p class="card-desc" data-es="Una de las playas más hermosas y tranquilas del Parque Tayrona. Agua cristalina y paisajes únicos." data-en="One of the most beautiful and calm beaches of Tayrona Park. Crystal water and unique landscapes." data-pt="Uma das praias mais bonitas e tranquilas do Parque Tayrona.">Una de las playas más hermosas y tranquilas del Parque Tayrona. Agua cristalina y paisajes únicos.</p>
+                <div class="card-footer">
+                    <div class="card-price">$110.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Acuario Playa Blanca -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/playa-blanca.avif" type="image/avif"><img src="images/playa-blanca.jpg" alt="Acuario Playa Blanca" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Acuario Playa Blanca</div>
+                <p class="card-desc" data-es="Visita el acuario y disfruta de Playa Blanca. Múltiples paquetes disponibles." data-en="Visit the aquarium and enjoy Playa Blanca. Multiple packages available." data-pt="Visite o aquário e aproveite a Playa Blanca.">Visita el acuario y disfruta de Playa Blanca. Múltiples paquetes disponibles.</p>
+                <div class="card-footer">
+                    <div class="card-price">$32.000 - $148.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Regional Tours -->
-<section class="tours-section tours-regional">
-    <div class="container">
-        <h2 class="section-title-inline fade-up" data-es="Destinos Regionales" data-en="Regional Destinations" data-pt="Destinos Regionais">Destinos Regionales</h2>
-        <div class="tours-grid">
-            <div class="tour-card-link tour-card fade-up" data-href="tours/cartagena-baru.html">
-                <div class="tour-card-image">
-                    <picture>
-                        <source srcset="images/cartagena-baru.avif" type="image/avif">
-                        <img src="images/cartagena-baru.jpg" alt="Cartagena - Barú" class="tour-img" loading="lazy">
-                    </picture>
-                    <span class="tour-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
-                </div>
-                <div class="tour-card-body">
-                    <h3 class="tour-name">Cartagena - Barú</h3>
-                    <p class="tour-desc" data-es="Historia, cultura y playas en un solo tour." data-en="History, culture and beaches in one tour." data-pt="História, cultura e praias em um só passeio.">Historia, cultura y playas en un solo tour.</p>
-                    <ul class="tour-includes">
-                        <li data-es="Desayuno y Almuerzo" data-en="Breakfast & Lunch" data-pt="Café da Manhã e Almoço">Desayuno y Almuerzo</li>
-                        <li data-es="Guía Profesional" data-en="Professional Guide" data-pt="Guia Profissional">Guía Profesional</li>
-                    </ul>
-                    <div class="tour-footer">
-                        <div class="tour-price">$170.000 <span>COP/pp</span></div>
-                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
-                    </div>
+<!-- Destinos Regionales -->
+<div class="scroll-tours-section">
+    <h3 class="category-label" data-es="Destinos Regionales" data-en="Regional Destinations" data-pt="Destinos Regionais">Destinos Regionales</h3>
+    <div class="scroll-tours-row">
+        <!-- Minca - Taganga -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/minca-taganga.avif" type="image/avif"><img src="images/minca-taganga.jpg" alt="Minca - Taganga" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Terrestre y Marítimo" data-en="Land & Maritime" data-pt="Terrestre e Marítimo">Terrestre y Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Minca - Taganga</div>
+                <p class="card-desc" data-es="Hermosos paisajes de la Sierra junto a 2 playas de Santa Marta. Taganga y Playa Grande." data-en="Beautiful Sierra landscapes along with 2 Santa Marta beaches. Taganga and Playa Grande." data-pt="Belas paisagens da Sierra junto com 2 praias de Santa Marta.">Hermosos paisajes de la Sierra junto a 2 playas de Santa Marta. Taganga y Playa Grande.</p>
+                <div class="card-footer">
+                    <div class="card-price">$130.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
                 </div>
             </div>
-            <div class="tour-card-link tour-card fade-up delay-1" data-href="tours/minca-taganga.html">
-                <div class="tour-card-image">
-                    <picture>
-                        <source srcset="images/minca-taganga.avif" type="image/avif">
-                        <img src="images/minca-taganga.jpg" alt="Minca - Taganga" class="tour-img" loading="lazy">
-                    </picture>
-                    <span class="tour-type" data-es="Terrestre y Marítimo" data-en="Land & Maritime" data-pt="Terrestre e Marítimo">Terrestre y Marítimo</span>
-                </div>
-                <div class="tour-card-body">
-                    <h3 class="tour-name">Minca - Taganga</h3>
-                    <p class="tour-desc" data-es="Sierra Nevada y playas en un día completo." data-en="Sierra Nevada and beaches in a full day." data-pt="Sierra Nevada e praias em um dia completo.">Sierra Nevada y playas en un día completo.</p>
-                    <ul class="tour-includes">
-                        <li data-es="Desayuno y Almuerzo" data-en="Breakfast & Lunch" data-pt="Café da Manhã e Almoço">Desayuno y Almuerzo</li>
-                        <li data-es="Guía Profesional" data-en="Professional Guide" data-pt="Guia Profissional">Guía Profesional</li>
-                    </ul>
-                    <div class="tour-footer">
-                        <div class="tour-price">$130.000 <span>COP/pp</span></div>
-                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
-                    </div>
+        </div>
+        <!-- Buritaca -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/buritaca.avif" type="image/avif"><img src="images/buritaca.jpg" alt="Buritaca" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Buritaca</div>
+                <p class="card-desc" data-es="Playas espectaculares y ríos cristalinos donde la Sierra Nevada se encuentra con el mar Caribe." data-en="Spectacular beaches and crystal rivers where the Sierra Nevada meets the Caribbean Sea." data-pt="Praias espetaculares e rios cristalinos onde a Sierra Nevada encontra o Mar do Caribe.">Playas espectaculares y ríos cristalinos donde la Sierra Nevada se encuentra con el mar Caribe.</p>
+                <div class="card-footer">
+                    <div class="card-price">$120.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
                 </div>
             </div>
-            <div class="tour-card-link tour-card fade-up delay-2" data-href="tours/katamaran.html">
-                <div class="tour-card-image">
-                    <picture>
-                        <source srcset="images/katamaran.avif" type="image/avif">
-                        <img src="images/katamaran.jpg" alt="Fiesta Blanca Katamarán" class="tour-img" loading="lazy">
-                    </picture>
-                    <span class="tour-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+        </div>
+        <!-- Palomino -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/palomino.avif" type="image/avif"><img src="images/palomino.jpg" alt="Palomino, Guajira" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Palomino, Guajira</div>
+                <p class="card-desc" data-es="Playas de arena dorada, tubing por el río y la energía vibrante del Caribe colombiano." data-en="Golden sand beaches, river tubing and the vibrant energy of the Colombian Caribbean." data-pt="Praias de areia dourada, boia no rio e energia vibrante do Caribe.">Playas de arena dorada, tubing por el río y la energía vibrante del Caribe colombiano.</p>
+                <div class="card-footer">
+                    <div class="card-price">$120.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
                 </div>
-                <div class="tour-card-body">
-                    <h3 class="tour-name">Fiesta Blanca Katamarán</h3>
-                    <p class="tour-desc" data-es="Barra libre, show folclórico y DJ a bordo en la bahía de Santa Marta." data-en="Open bar, folklore show and DJ on board in Santa Marta Bay." data-pt="Open bar, show folclórico e DJ a bordo.">Barra libre, show folclórico y DJ a bordo en la bahía de Santa Marta.</p>
-                    <ul class="tour-includes">
-                        <li data-es="Barra Libre de Cócteles" data-en="Open Bar Cocktails" data-pt="Coquetéis Open Bar">Barra Libre de Cócteles</li>
-                        <li data-es="Show Folclórico y DJ" data-en="Folklore Show & DJ" data-pt="Show Folclórico e DJ">Show Folclórico y DJ</li>
-                    </ul>
-                    <div class="tour-footer">
-                        <div class="tour-price">$150.000 <span>COP/pp</span></div>
-                        <a href="#booking" class="btn btn-sm" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
-                    </div>
+            </div>
+        </div>
+        <!-- Cartagena - Barú -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/cartagena-baru.avif" type="image/avif"><img src="images/cartagena-baru.jpg" alt="Cartagena - Barú" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Cartagena - Barú</div>
+                <p class="card-desc" data-es="Centro histórico de Cartagena y las playas de Isla Barú. Historia, cultura y playas." data-en="Historic center of Cartagena and Isla Barú beaches. History, culture and beaches." data-pt="Centro histórico de Cartagena e praias de Isla Barú.">Centro histórico de Cartagena y las playas de Isla Barú. Historia, cultura y playas.</p>
+                <div class="card-footer">
+                    <div class="card-price">$170.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Barranquilla -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/barranquilla.avif" type="image/avif"><img src="images/barranquilla.jpg" alt="Barranquilla" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Terrestre" data-en="Land" data-pt="Terrestre">Terrestre</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Barranquilla - Puerto Mocho</div>
+                <p class="card-desc" data-es="City tour por Barranquilla, Ventana del Mundo, Estatua de Shakira y playa Puerto Mocho." data-en="City tour through Barranquilla, Window to the World, Shakira Statue and Puerto Mocho beach." data-pt="City tour por Barranquilla, Ventana al Mundo, Estátua da Shakira e praia Puerto Mocho.">City tour por Barranquilla, Ventana del Mundo, Estatua de Shakira y playa Puerto Mocho.</p>
+                <div class="card-footer">
+                    <div class="card-price">$150.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<!-- Fiestas y Experiencias -->
+<div class="scroll-tours-section">
+    <h3 class="category-label" data-es="Fiestas y Experiencias" data-en="Parties & Experiences" data-pt="Festas e Experiências">Fiestas y Experiencias</h3>
+    <div class="scroll-tours-row">
+        <!-- Aquatreck -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/aquatreck.avif" type="image/avif"><img src="images/aquatreck.jpg" alt="Aquatreck" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Aquatreck</div>
+                <p class="card-desc" data-es="Caminata submarina en Playa Puerto Luz. Técnicas de buceo con expertos buzos y escafandras." data-en="Submarine walk at Puerto Luz Beach. Diving techniques with expert divers and helmets." data-pt="Caminhada submarina na Praia Puerto Luz.">Caminata submarina en Playa Puerto Luz. Técnicas de buceo con expertos buzos y escafandras.</p>
+                <div class="card-footer">
+                    <div class="card-price">$130.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Fiesta Blanca Katamarán -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/katamaran.avif" type="image/avif"><img src="images/katamaran.jpg" alt="Fiesta Blanca Katamarán" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name">Fiesta Blanca Katamarán</div>
+                <p class="card-desc" data-es="Barra libre, show folclórico y DJ a bordo en la bahía de Santa Marta." data-en="Open bar, folklore show and DJ on board in Santa Marta Bay." data-pt="Open bar, show folclórico e DJ a bordo na baía de Santa Marta.">Barra libre, show folclórico y DJ a bordo en la bahía de Santa Marta.</p>
+                <div class="card-footer">
+                    <div class="card-price">$150.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Paseo al Atardecer -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <picture><source srcset="images/sunset-cruise.avif" type="image/avif"><img src="images/sunset-cruise.jpg" alt="Paseo al Atardecer" class="card-img" loading="lazy"></picture>
+                <span class="card-type" data-es="Marítimo" data-en="Maritime" data-pt="Marítimo">Marítimo</span>
+            </div>
+            <div class="card-body">
+                <div class="card-name" data-es="Paseo al Atardecer" data-en="Sunset Cruise" data-pt="Cruzeiro ao Pôr do Sol">Paseo al Atardecer</div>
+                <p class="card-desc" data-es="Recorrido panorámico por la bahía de Santa Marta al atardecer con cócteles barra libre." data-en="Panoramic tour of Santa Marta Bay at sunset with open bar cocktails." data-pt="Passeio panorâmico pela Baía de Santa Marta ao pôr do sol com coquetéis open bar.">Recorrido panorámico por la bahía de Santa Marta al atardecer con cócteles barra libre.</p>
+                <div class="card-footer">
+                    <div class="card-price">$80.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Chiva Rumbera Tradicional -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <div style="width:100%;height:180px;background:linear-gradient(135deg,#F97316,#F59E0B);display:flex;align-items:center;justify-content:center;font-size:3rem;color:white;font-weight:800;">CH</div>
+            </div>
+            <div class="card-body">
+                <div class="card-name" data-es="Chiva Rumbera Tradicional" data-en="Traditional Party Bus" data-pt="Chiva Rumbera Tradicional">Chiva Rumbera Tradicional</div>
+                <p class="card-desc" data-es="Fiesta sobre ruedas por Santa Marta. Música, baile y diversión." data-en="Party on wheels through Santa Marta. Music, dance and fun." data-pt="Festa sobre rodas por Santa Marta. Música, dança e diversão.">Fiesta sobre ruedas por Santa Marta. Música, baile y diversión.</p>
+                <div class="card-footer">
+                    <div class="card-price">$25.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- Chiva Rumbera VIP -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <div style="width:100%;height:180px;background:linear-gradient(135deg,#F59E0B,#EAB308);display:flex;align-items:center;justify-content:center;font-size:3rem;color:white;font-weight:800;">VIP</div>
+            </div>
+            <div class="card-body">
+                <div class="card-name" data-es="Chiva Rumbera VIP" data-en="VIP Party Bus" data-pt="Chiva Rumbera VIP">Chiva Rumbera VIP</div>
+                <p class="card-desc" data-es="La experiencia VIP de la chiva rumbera. Fiesta premium sobre ruedas." data-en="The VIP party bus experience. Premium party on wheels." data-pt="A experiência VIP da chiva rumbera. Festa premium sobre rodas.">La experiencia VIP de la chiva rumbera. Fiesta premium sobre ruedas.</p>
+                <div class="card-footer">
+                    <div class="card-price">$30.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+        <!-- City Tour en Chiva -->
+        <div class="scroll-tour-card">
+            <div class="card-img-wrap">
+                <div style="width:100%;height:180px;background:linear-gradient(135deg,#0EA5E9,#0c3547);display:flex;align-items:center;justify-content:center;font-size:3rem;color:white;font-weight:800;">CT</div>
+            </div>
+            <div class="card-body">
+                <div class="card-name" data-es="City Tour en Chiva" data-en="City Tour by Chiva" data-pt="City Tour de Chiva">City Tour en Chiva</div>
+                <p class="card-desc" data-es="Recorrido por sitios turísticos de Santa Marta. 3.5 horas con guía profesional." data-en="Tour through Santa Marta's tourist sites. 3.5 hours with professional guide." data-pt="Passeio pelos pontos turísticos de Santa Marta. 3,5 horas com guia profissional.">Recorrido por sitios turísticos de Santa Marta. 3.5 horas con guía profesional.</p>
+                <div class="card-footer">
+                    <div class="card-price">$35.000 <span>COP/pp</span></div>
+                    <a href="#booking" class="card-btn" data-es="Reservar" data-en="Book" data-pt="Reservar">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Booking Section -->
 <section class="booking-section" id="booking">
