@@ -37,7 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show hero text immediately + trigger fade-up animations
         heroContent.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
 
-        // Attempt autoplay (fallback for mobile)
+        // Lazy-load video: set src after page is ready, then autoplay
+        const source = heroVideo.querySelector('source[data-src]');
+        if (source) {
+            source.src = source.getAttribute('data-src');
+            heroVideo.load();
+        }
         heroVideo.play().catch(() => {});
     }
 
@@ -160,16 +165,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const langBtn = document.getElementById('langToggle');
     let currentLang = 'es';
 
-    const langCycle = ['es', 'en', 'pt'];
+    const langCycle = ['es', 'en', 'pt', 'de'];
     const langLabels = {
         es: '<span class="lang-flag">🇺🇸</span> EN',
         en: '<span class="lang-flag">🇧🇷</span> PT',
-        pt: '<span class="lang-flag">🇪🇸</span> ES'
+        pt: '<span class="lang-flag">🇩🇪</span> DE',
+        de: '<span class="lang-flag">🇪🇸</span> ES'
     };
     const langTitles = {
         es: 'Tour Tropical - Agencia de Viajes | Santa Marta',
         en: 'Tour Tropical - Travel Agency | Santa Marta',
-        pt: 'Tour Tropical - Agência de Viagens | Santa Marta'
+        pt: 'Tour Tropical - Agência de Viagens | Santa Marta',
+        de: 'Tour Tropical - Reise- und Tourismusagentur | Santa Marta'
     };
 
     langBtn.addEventListener('click', () => {
@@ -220,6 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
             waMsg = `Hello! I'd like to book:\n\n*Tour:* ${tourName}\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Guests:* ${guests}\n*Date:* ${date}${message ? '\n*Message:* ' + message : ''}`;
         } else if (currentLang === 'pt') {
             waMsg = `Olá! Gostaria de reservar:\n\n*Passeio:* ${tourName}\n*Nome:* ${name}\n*E-mail:* ${email}\n*Telefone:* ${phone}\n*Hóspedes:* ${guests}\n*Data:* ${date}${message ? '\n*Mensagem:* ' + message : ''}`;
+        } else if (currentLang === 'de') {
+            waMsg = `Hallo! Ich möchte buchen:\n\n*Tour:* ${tourName}\n*Name:* ${name}\n*E-Mail:* ${email}\n*Telefon:* ${phone}\n*Gäste:* ${guests}\n*Datum:* ${date}${message ? '\n*Nachricht:* ' + message : ''}`;
         } else {
             waMsg = `¡Hola! Quiero reservar:\n\n*Tour:* ${tourName}\n*Nombre:* ${name}\n*Email:* ${email}\n*Teléfono:* ${phone}\n*Personas:* ${guests}\n*Fecha:* ${date}${message ? '\n*Mensaje:* ' + message : ''}`;
         }
@@ -227,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const waUrl = `https://wa.me/573013493902?text=${encodeURIComponent(waMsg)}`;
 
         // Show success state
-        const successTitle = { es: '¡Solicitud Enviada!', en: 'Booking Request Sent!', pt: 'Solicitação Enviada!' };
-        const successMsg = { es: 'Serás redirigido a WhatsApp para confirmar tu reserva.', en: 'You will be redirected to WhatsApp to confirm your booking.', pt: 'Você será redirecionado ao WhatsApp para confirmar sua reserva.' };
+        const successTitle = { es: '¡Solicitud Enviada!', en: 'Booking Request Sent!', pt: 'Solicitação Enviada!', de: 'Buchungsanfrage Gesendet!' };
+        const successMsg = { es: 'Serás redirigido a WhatsApp para confirmar tu reserva.', en: 'You will be redirected to WhatsApp to confirm your booking.', pt: 'Você será redirecionado ao WhatsApp para confirmar sua reserva.', de: 'Sie werden zu WhatsApp weitergeleitet, um Ihre Buchung zu bestätigen.' };
         form.innerHTML = `
             <div class="form-success">
                 <div class="checkmark">✓</div>

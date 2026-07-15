@@ -36,11 +36,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     setTimeout(() => {
         const langBtn = document.getElementById('langToggle');
         if (langBtn) {
-            const langCycle = ['es', 'en', 'pt'];
+            const langCycle = ['es', 'en', 'pt', 'de'];
             const langLabels = {
                 es: '<span class="lang-flag">🇺🇸</span> EN',
                 en: '<span class="lang-flag">🇧🇷</span> PT',
-                pt: '<span class="lang-flag">🇪🇸</span> ES'
+                pt: '<span class="lang-flag">🇩🇪</span> DE',
+                de: '<span class="lang-flag">🇪🇸</span> ES'
             };
 
             langBtn.addEventListener('click', () => {
@@ -108,6 +109,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 waMsg = `Hello! I'd like to book:\n\n*Tour:* ${tourName}\n*Name:* ${name}\n*Guests:* ${guests}\n*Date:* ${date}`;
             } else if (currentLang === 'pt') {
                 waMsg = `Olá! Gostaria de reservar:\n\n*Passeio:* ${tourName}\n*Nome:* ${name}\n*Hóspedes:* ${guests}\n*Data:* ${date}`;
+            } else if (currentLang === 'de') {
+                waMsg = `Hallo! Ich möchte buchen:\n\n*Tour:* ${tourName}\n*Name:* ${name}\n*Gäste:* ${guests}\n*Datum:* ${date}`;
             } else {
                 waMsg = `Hola! Quiero reservar:\n\n*Tour:* ${tourName}\n*Nombre:* ${name}\n*Personas:* ${guests}\n*Fecha:* ${date}`;
             }
